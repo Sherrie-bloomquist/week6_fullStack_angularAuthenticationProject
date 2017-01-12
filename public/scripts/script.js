@@ -72,8 +72,17 @@ myApp.controller('registerController',['$scope', '$http', '$window',
 
 }]);
 
-myApp.controller('AddController', ['$scope', '$http', function($scope, $http){
+myApp.controller('AddController', ['$scope', '$http', '$window', function($scope, $http, $window){
   console.log('in AddController');
+  $scope.checkLogin = function(){
+    $http.get('/auth')
+      .then(function successCallback(response) {
+        console.log('success', response);
+      }, function errorCallback(error) {
+        console.log('error occurred!');
+        $window.location.href = '#!/login';
+      });
+  };$scope.checkLogin();
 
   // $scope.login();
 }]);//end AddController
