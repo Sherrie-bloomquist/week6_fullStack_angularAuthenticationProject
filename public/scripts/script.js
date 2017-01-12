@@ -92,11 +92,19 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
     $http.post('/item', itemToSend)
     .then(function(response){
       console.log('POST hit');
+
+      if(confirm("Do you want to add another item?")){
+        $scope.descrip = '';
+        $scope.imageUrl = '';
+      }else{
+        $window.location.href = '#!/home'
+      }
     }).catch(function(response){
       console.log('PSYCHE: ', response);
       if(response.status === 401) {
         $window.location.href = '#!/login';
       }
+
     });
   };
 
