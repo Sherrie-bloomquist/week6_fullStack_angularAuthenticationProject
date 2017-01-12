@@ -84,6 +84,19 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
       });
   };$scope.checkLogin();
 
+  $scope.addItem = function(){
+    var itemToSend = {
+      description: $scope.descrip,
+      image: $scope.imageUrl
+    };
+    $http.post('/add', itemToSend)
+    .then(function(response){
+      console.log('POST hit');
+    }).catch(function(response){
+      console.log('PSYCHE: ', response);
+    });
+  };
+
   // $scope.login();
 }]);//end AddController
 
