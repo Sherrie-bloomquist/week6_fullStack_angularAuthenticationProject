@@ -89,7 +89,7 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
       description: $scope.descrip,
       image: $scope.imageUrl
     };
-    $http.post('/add', itemToSend)
+    $http.post('/item', itemToSend)
     .then(function(response){
       console.log('POST hit');
     }).catch(function(response){
