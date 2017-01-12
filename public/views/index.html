@@ -3,23 +3,16 @@
   <head>
     <title>Passport Lecture</title>
     <script src="./vendors/angular.min.js" charset="utf-8"></script>
+    <script src="/vendors/angular-route.min.js" type="text/javascript"></script>
     <script src="./scripts/script.js" charset="utf-8"></script>
+
   </head>
     <body ng-app="myApp">
-      <h1>Passport Login</h1>
-      <form ng-controller="mainController">
-        <div>
-          <label for="username">Username:</label>
-          <input ng-model="username" type="text" name="username" id="username"/>
-        </div>
-        <div>
-          <label for="password">Password:</label>
-          <input ng-model="password" type="password" name="password" id="password"/>
-        </div>
-        <div>
-          <input ng-click="login()" type="submit" value="Log In"/>
-          <a href="/register">Register</a>
-        </div>
-      </form>
+      <a href="#!/home">home</a>
+      <a href="#!/add">add</a>
+      <a href="#!/register">register</a>
+      <a href="#!/login">login</a>
+      <main ng-view></main>
+
   </body>
 </html>

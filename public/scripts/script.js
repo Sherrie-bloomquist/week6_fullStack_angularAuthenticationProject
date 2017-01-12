@@ -1,6 +1,28 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.controller('mainController',['$scope', '$http', '$window',
+myApp.config(['$routeProvider', function($routeProvider){
+  $routeProvider
+  .when('/home', {
+    templateUrl: 'views/partials/home.html',
+  })
+  .when('/add', {
+    templateUrl: 'views/partials/add.html',
+    controller: 'AddController'
+  })
+  .when('/login', {
+    templateUrl: 'views/partials/login.html',
+    controller: 'LoginController'
+  })
+  .when('/register', {
+    templateUrl: 'views/partials/register.html',
+    controller: 'registerController'
+  })
+  .otherwise({
+    redirectTo: 'home'
+  });
+}]);//end routeProvider
+
+myApp.controller('LoginController',['$scope', '$http', '$window',
   function($scope, $http, $window) {
   console.log('inside main controller');
 
@@ -46,4 +68,9 @@ myApp.controller('registerController',['$scope', '$http', '$window',
       console.log('error occurred!');
     });
   };
+
 }]);
+
+myApp.controller('AddController', ['$scope', '$http', function($scope, $http){
+  console.log('in AddController');
+}]);//end AddController
