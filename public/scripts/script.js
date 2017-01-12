@@ -26,7 +26,7 @@ myApp.config(['$routeProvider', function($routeProvider){
 myApp.controller('LoginController',['$scope', '$http', '$window',
   function($scope, $http, $window) {
   console.log('inside login controller');
-  $scope.banana
+
   $scope.login = function(){
 
     var userInfo = {
