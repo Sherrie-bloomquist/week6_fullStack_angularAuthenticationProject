@@ -94,6 +94,9 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
       console.log('POST hit');
     }).catch(function(response){
       console.log('PSYCHE: ', response);
+      if(response.status === 401) {
+        $window.location.href = '#!/login';
+      }
     });
   };
 
