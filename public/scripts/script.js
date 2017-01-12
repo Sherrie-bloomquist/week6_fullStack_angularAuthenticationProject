@@ -97,7 +97,8 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
         $scope.descrip = '';
         $scope.imageUrl = '';
       }else{
-        $window.location.href = '#!/home'
+        $window.location.href = '#!/home';
+
       }
     }).catch(function(response){
       console.log('PSYCHE: ', response);
@@ -113,4 +114,12 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
 
 myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
   console.log('in HomeController');
+  $scope.displayItems = function(){
+    $http.get('/item')
+    .then(function(response){
+      console.log(response);
+      $scope.items = response.data;
+    });
+  };
+  $scope.displayItems();
 }]);

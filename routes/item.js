@@ -9,7 +9,7 @@ router.post('/', function(req, res) {
     var newItem = new Item({
       description: req.body.description,
       image_url: req.body.image,
-      user_id: req.user
+      user: req.user.username
     });
 
     Item.create(newItem)
@@ -24,6 +24,16 @@ router.post('/', function(req, res) {
   } else {
     res.sendStatus(401);
   }
+});
+
+router.get('/', function(req, res){
+  Item.find()
+  .then(function(result){
+    res.send(result);
+  })
+  .catch(function(err){
+    console.log('error:', err);
+  });
 });
 
 module.exports = router;
