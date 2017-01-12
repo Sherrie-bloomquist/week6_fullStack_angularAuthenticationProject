@@ -1,6 +1,6 @@
 <h1>Passport Login</h1>
 <form>
-  <div>
+  <div ng-controller="LoginController">
     <label for="username">Username:</label>
     <input ng-model="username" type="text" name="username" id="username"/>
   </div>
@@ -10,6 +10,6 @@
   </div>
   <div>
     <input ng-click="login()" type="submit" value="Log In"/>
-    <a href="/register">Register</a>
+    <a href="#!/register">register</a>
   </div>
 </form>

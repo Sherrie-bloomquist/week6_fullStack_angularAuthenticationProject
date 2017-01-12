@@ -4,6 +4,7 @@ myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
   .when('/home', {
     templateUrl: 'views/partials/home.html',
+    controller: 'HomeController'
   })
   .when('/add', {
     templateUrl: 'views/partials/add.html',
@@ -24,8 +25,8 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 myApp.controller('LoginController',['$scope', '$http', '$window',
   function($scope, $http, $window) {
-  console.log('inside main controller');
-
+  console.log('inside login controller');
+  $scope.banana
   $scope.login = function(){
 
     var userInfo = {
@@ -39,10 +40,10 @@ myApp.controller('LoginController',['$scope', '$http', '$window',
       data: userInfo
     }).then(function successCallback(response) {
       console.log(response);
-      $window.location.href = '/home';
+      $window.location.href = '#!/home';
     }, function errorCallback(error) {
       console.log('error', error);
-      $window.location.href = '/';
+      $window.location.href = '#!/login';
     });
   };
 }]);
@@ -73,4 +74,10 @@ myApp.controller('registerController',['$scope', '$http', '$window',
 
 myApp.controller('AddController', ['$scope', '$http', function($scope, $http){
   console.log('in AddController');
+
+  // $scope.login();
 }]);//end AddController
+
+myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
+  console.log('in HomeController');
+}]);
