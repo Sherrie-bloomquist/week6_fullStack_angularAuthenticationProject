@@ -1,10 +1,11 @@
-<h1>Home</h1>
-<img src="images/tauShelf.png">
 
 <p id="homeDescription">Here lies Tau's shelf of random things to make us feel at home</p>
+<img src="images/tauShelf.png">
 
-<h3>Check out our new items on the shelf!!</h3>
-<div id="displayNewItem" ng-repeat="item in items">
+
+
+<h3 id="homeSubHeading">Check out our new items on the shelf!!</h3>
+<div id="displayNewItem" ng-repeat="item in items" class="col-xs-6 col-sm-3 tile">
   {{item.description}}
   <img ng-src={{item.image_url}}>
   <p>submitted by: {{item.user}}</p>

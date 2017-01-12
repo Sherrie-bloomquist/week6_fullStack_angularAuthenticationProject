@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Passport Lecture</title>
+    <title>Tau Shelf</title>
     <script src="./vendors/angular.min.js" charset="utf-8"></script>
     <script src="/vendors/angular-route.min.js" type="text/javascript"></script>
     <script src="./scripts/script.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <link rel="stylesheet" href="styles/bootstrap.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="styles/style.css" media="screen" title="no title">
 
   </head>
-    <body ng-app="myApp">
-      <a href="#!/home">home</a>
-      <a href="#!/add">add</a>
-      <a href="#!/login">login</a>
-      <main ng-view></main>
 
-  </body>
+    <body ng-app="myApp" >
+      <div class="container-fluid">
+        <a href="#!/home">home</a>
+        <a href="#!/add">add</a>
+        <a href="#!/login">login</a>
+        <main ng-view></main>
+      </div>
+    </body>
 </html>
