@@ -1,5 +1,42 @@
 Full Stack with Auth Peer Project
 =================================
+Built by the bananaFunction(Sherrie Bloomquist, Jacob Froman, Karla Hugo, Amanda Jopp)
+
+Planning
+--------
+1. Defined the UI flow for the user
+  1. Home page
+    * Shelf items and splash image
+    * Home/Add/Login nav
+  2. Add page
+    * Checks if user is currently authenticated
+      * If not, redirect to Login
+    * User can add a new item to the shelf by supplying a description and URL
+      * On successful add, user is prompted to continue adding
+        * If yes, clear inputs
+        * Otherwise, redirect to Home
+  3. Login page
+    * User can login with username and password
+      * On success, redirect to Home
+      * On failure, reload Login
+    * User can also register and redirect to Register page
+  4. Register page
+    * User can create new user with username and password
+      * On success, redirects to Login
+2. Planned out steps to completion
+  1. Test authentication
+  2. Build out home page
+  3. Build out add items page
+  4. Convert login and register pages to angular-route
+  5. Create server route for adding an item
+    * Make item model
+  6. Lock adding items behind authentication
+  7. Create server route for getting all items
+  8. Build out home controller
+  9. Build out add controller
+  10. Display items on home page
+
+![our plan](2695C982-DDC2-45AA-9988-D7F18D875F5C.JPG)
 
 ![our shelf](tauShelf.png)
 

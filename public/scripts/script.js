@@ -64,7 +64,7 @@ myApp.controller('registerController',['$scope', '$http', '$window',
       data: userInfo
     }).then(function successCallback(response) {
       console.log('success', response);
-      $window.location.href = '/';
+      $window.location.href = '#!/login';
     }, function errorCallback(error) {
       console.log('error occurred!');
     });
