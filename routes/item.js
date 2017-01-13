@@ -11,7 +11,6 @@ router.post('/', function(req, res) {
       image_url: req.body.image,
       user: req.user.username
     });
-
     Item.create(newItem)
     .then(function(result) {
       console.log(result);
@@ -55,5 +54,6 @@ router.delete('/:id', function(req, res){
     res.sendStatus(401);
   }
 });
+
 
 module.exports = router;

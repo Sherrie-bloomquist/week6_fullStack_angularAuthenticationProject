@@ -108,8 +108,6 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
 
     });
   };
-
-  // $scope.login();
 }]);//end AddController
 
 myApp.controller('HomeController', ['$scope', '$http', '$window', function($scope, $http, $window){
@@ -137,4 +135,12 @@ myApp.controller('HomeController', ['$scope', '$http', '$window', function($scop
       }
     });
   };
+  $scope.displayUsers = function() {
+    $http.get('/home')
+    .then(function(response){
+      console.log('displayUsers response:', response);
+      $scope.users = response.data;
+    });
+  };
+  $scope.displayUsers();
 }]);

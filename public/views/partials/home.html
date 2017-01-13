@@ -9,7 +9,12 @@
   <img ng-src={{item.image_url}}>
   <p>submitted by: {{item.user}}</p>
   <button type="button" ng-click="deleteItem(item._id)">Delete Item</button>
-
+</div>
+<div class="userDiv">
+  Registered Users:
+  <p ng-repeat='user in users'>
+    {{user}}
+  </p>
 </div>
 
 <p>
