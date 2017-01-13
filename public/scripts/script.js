@@ -122,4 +122,13 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
     });
   };
   $scope.displayItems();
+  $scope.deleteItem = function (id){
+    $http.delete('/item/' + id)
+    .then(function(response){
+      console.log('delete hit', response);
+      $scope.displayItems();
+    }).catch(function(response){
+      console.log('delete error', response);
+    });
+  };
 }]);

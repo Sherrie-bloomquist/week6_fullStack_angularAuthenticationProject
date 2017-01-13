@@ -4,10 +4,6 @@ var path = require('path');
 
 var UserSchema = require('../models/user');
 
-router.get('/', function(req, res) {
-  var regPath = path.join(__dirname, '../public/views/register.html');
-  res.sendFile(regPath);
-});
 
 router.post('/', function(req, res) {
   var sentUser = req.body;
