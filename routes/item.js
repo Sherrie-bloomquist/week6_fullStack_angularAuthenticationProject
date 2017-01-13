@@ -38,8 +38,9 @@ router.get('/', function(req, res){
 
 router.delete('/:id', function(req, res){
   if(req.isAuthenticated()){
-    Item.findByIdAndRemove(req.params.id)
-    .then(function(){
+    Item.remove({ _id: req.params.id, user: req.user.username })
+    .then(function(result){
+      console.log('Result:', result);
       res.send(200);
     })
     .catch(function(err){
