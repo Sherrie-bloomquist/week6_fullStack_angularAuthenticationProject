@@ -37,14 +37,18 @@ router.get('/', function(req, res){
 });
 
 router.delete('/:id', function(req, res){
-  Item.findByIdAndRemove(req.params.id)
-  .then(function(){
-    res.send(200);
-  })
-  .catch(function(err){
-    console.log("error:", err);
-    res.send(500);
-  });
+  if(req.isAuthenticated()){
+    Item.findByIdAndRemove(req.params.id)
+    .then(function(){
+      res.send(200);
+    })
+    .catch(function(err){
+      console.log("error:", err);
+      res.send(500);
+    });
+  }else{
+    res.sendStatus(401);
+  }
 });
 
 module.exports = router;

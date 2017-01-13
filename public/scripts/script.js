@@ -112,7 +112,7 @@ myApp.controller('AddController', ['$scope', '$http', '$window', function($scope
   // $scope.login();
 }]);//end AddController
 
-myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
+myApp.controller('HomeController', ['$scope', '$http', '$window', function($scope, $http, $window){
   console.log('in HomeController');
   $scope.displayItems = function(){
     $http.get('/item')
@@ -129,6 +129,9 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
       $scope.displayItems();
     }).catch(function(response){
       console.log('delete error', response);
+      if(response.status === 401) {
+        $window.location.href = '#!/login';
+      }
     });
   };
 }]);
