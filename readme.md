@@ -1,5 +1,6 @@
 Full Stack with Auth Peer Project
 =================================
+![our shelf](tauShelf.png)
 Built by the bananaFunction(Sherrie Bloomquist, Jacob Froman, Karla Hugo, Amanda Jopp)
 
 Planning
@@ -36,9 +37,7 @@ Planning
   9. Build out add controller
   10. Display items on home page
 
-![our plan](2695C982-DDC2-45AA-9988-D7F18D875F5C.JPG)
-
-![our shelf](tauShelf.png)
+![our plan](plan.JPG)
 
 Technologies
 ------------
