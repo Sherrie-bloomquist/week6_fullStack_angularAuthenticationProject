@@ -126,6 +126,9 @@ myApp.controller('HomeController', ['$scope', '$http', '$window', function($scop
     $http.delete('/item/' + id)
     .then(function(response){
       console.log('delete hit', response);
+      if(response.data.message === 'Not your item!'){
+        alert(response.data.message);
+      }
       $scope.displayItems();
     }).catch(function(response){
       console.log('delete error', response);

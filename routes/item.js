@@ -41,7 +41,11 @@ router.delete('/:id', function(req, res){
     Item.remove({ _id: req.params.id, user: req.user.username })
     .then(function(result){
       console.log('Result:', result);
-      res.send(200);
+      if(result.result.n === 0) {
+        res.status(200).send({message: "Not your item!"});
+      } else {
+        res.send(200);
+      }
     })
     .catch(function(err){
       console.log("error:", err);
