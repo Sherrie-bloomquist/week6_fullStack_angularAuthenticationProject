@@ -10,6 +10,13 @@
 
 #displayNewItem{
   list-style-type: none;
-  display: inline-flex;
-  
+  /*display: inline-flex;*/
+
+}
+
+footer {
+  background-color: AntiqueWhite;
+  margin: 20px 0 0 0;
+  padding: 10px;
+  text-align: center;
 }
